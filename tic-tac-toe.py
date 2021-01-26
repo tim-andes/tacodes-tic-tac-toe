@@ -133,6 +133,7 @@ def main(ttt_board, print_board, check_win):
 	"""
 	PleasestopmewhyIamIcreatingthismonster.
 	Also, this function starts the game.
+	
 	:param print_board: Displays board, X, and O positions to player(s)
 	:param ttt_board: Argument passed into print_board w/ position keys/values
 	:param check_win: Function that checks if either player has won.
@@ -169,11 +170,15 @@ ___________________________________________________
 		while True:
 			while True:
 				move = input(f"Turn for player {turn}. Move on which space? ")
+				
+				# pro error handling
 				if ttt_board[move] not in ['X', 'O']:
 					break
 				else:
 					print("That space is taken. Try again.")
-			if move not in positions_list:  # check for input error
+					
+			# more pro error handling		
+			if move not in positions_list:
 				position_error += 1
 				if position_error == 3:
 					print("""				
@@ -213,3 +218,5 @@ ___________________________________________________
 
 if __name__ == "__main__":
 	main(ttt_board, print_board, check_win)
+
+# Congratulations, your programming skills have decreased by reading this
