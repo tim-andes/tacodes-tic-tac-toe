@@ -160,8 +160,8 @@ ___________________________________________________
 	position_error = 0
 	move_number = 0
 	positions_list = ['top-L', 'top-M', 'top-R',
-					  'mid-L', 'mid-M', 'mid-R',
-					  'low-L', 'low-M', 'low-R']
+			  'mid-L', 'mid-M', 'mid-R',
+			  'low-L', 'low-M', 'low-R']
 
 	for i in range(9):
 		print(print_board(ttt_board))
