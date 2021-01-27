@@ -6,8 +6,8 @@ import sys, time
 
 # we'll just leave this here
 ttt_board = {'top-L': ' ', 'top-M': ' ', 'top-R': ' ',
-			 'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ',
-			 'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
+	     'mid-L': ' ', 'mid-M': ' ', 'mid-R': ' ',
+	     'low-L': ' ', 'low-M': ' ', 'low-R': ' '}
 
 
 def print_board(ttt_board):
