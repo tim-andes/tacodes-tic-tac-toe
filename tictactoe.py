@@ -170,34 +170,32 @@ ___________________________________________________
 		while True:
 			while True:
 				move = input(f"Turn for player {turn}. Move on which space? ")
-				
+
 				# pro error handling
-				if ttt_board[move] not in ['X', 'O']:
-					break
+				if move not in positions_list:
+					position_error += 1
+					if position_error == 3:
+						print("""				
+						Moves not recognized, key in one of the following:
+							'top-L' | 'top-M' | 'top-R'
+							--------+---------+--------
+							'mid-L' | 'mid-M' | 'mid-R'
+							--------+---------+--------
+							'low-L' | 'low-M' | 'low-R'		
+							""")
+
+						position_error = 0
 				else:
-					print("That space is taken. Try again.")
+					break
 					
-			# more pro error handling		
-			if move not in positions_list:
-				position_error += 1
-				if position_error == 3:
-					print("""				
-				Moves not recognized, key in one of the following:
-
-					'top-L' | 'top-M' | 'top-R'
-					--------+---------+--------
-					'mid-L' | 'mid-M' | 'mid-R'
-					--------+---------+--------
-					'low-L' | 'low-M' | 'low-R'		
-
-					""")
-
-					position_error = 0
-			else:
+			# more pro error handling
+			if ttt_board[move] not in ['X', 'O']:
 				position_error = 0
 				ttt_board[move] = turn
 				move_number += 1
 				break
+			else:
+				print("That space is taken. Try again.")
 
 		# check for winner
 		if move_number >= 5:
